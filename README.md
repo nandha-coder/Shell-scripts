@@ -1,2 +1,0 @@
-# Shellscripts-
-Usefull scripts
