@@ -1,7 +1,13 @@
 #!/bin/bash
-#Script to show rotating cursur for the time being
-#Time should be mentioned as a arguement
-#syntax                 ./rotate.sh time(Seconds)
+## Script to show rotating cursur for the time being
+## Time should be mentioned as a arguement
+## Usage syntax       ./rotate.sh time(Seconds)
+
+## DATE: 4th April 2020
+## Author: Nandhakumar Madheshwaran
+
+
+#Color Defenition
 MAGENTA="\e[35m"
 BOLD="\e[1m"
 NOCOLOR="\e[39m"
