@@ -9,7 +9,6 @@ YELLOW="\e[33m"
 GREEN="\e[32m"
 
 #VARIABLE DECLARATIONS
-#declare -i SAR_CPU
 SERVER_HOSTNAME=`uname -n`
 ADMIN_EMAIL_ID=root@localhost
 DATE=$(date "+%F %H:%M:%S")
@@ -19,6 +18,8 @@ MEMUSAGE=$(sar -r 3 3 | grep Average: | awk '{print $4}')
 #To convert decimal point Value to integer
 SAR_CPU=${CPUUSAGE/.*}
 SAR_MEM=${MEMUSAGE/.*}
+
+########## CPU conditions ########
 if [ $SAR_CPU -le 10 ]
 then
 printf "${RED}CRITICAL ${NOCOLOR} CPU Usage : ${SAR_CPU}%% Idle ${DATE}\n" >> /opt/cpu.out
@@ -38,7 +39,7 @@ else
 printf "${GREEN}OK ${NOCOLOR} CPU Usage : ${SAR_CPU}%% Idle ${DATE}\n" >> /opt/cpu.out
 fi
 printf ""
-########## ====== memory conditions
+########## memory conditions ########
 if [ $SAR_MEM -ge 90 ]
 then
 printf "${RED}CRITICAL ${NOCOLOR} Mem Usage : ${SAR_MEM}%% Used ${DATE}\n" >> /opt/mem.out
@@ -56,4 +57,3 @@ else
 printf "${GREEN}OK ${NOCOLOR} Mem Usage : ${SAR_MEM}%% Used ${DATE}\n" >> /opt/mem.out
 fi
 printf "done!!!\n"
-
