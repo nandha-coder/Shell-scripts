@@ -9,6 +9,7 @@ YELLOW="\e[33m"
 GREEN="\e[32m"
 
 #VARIABLE DECLARATIONS
+#declare -i SAR_CPU
 SERVER_HOSTNAME=`uname -n`
 ADMIN_EMAIL_ID=root@localhost
 DATE=$(date "+%F %H:%M:%S")
