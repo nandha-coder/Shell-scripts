@@ -35,14 +35,19 @@ SVR_SHUTDOWN()
 sleep 2
 printf "\n Enter the Reference Ticket : "
 read REFTICKT
-printf "\n Do you Want to Proceed to Shutdown the server y|Y or n|N: "
+printf "\n Do you Want to Proceed to Shutdown the server Y/N : "
 read CNFM
-[[ -n $(echo $CNFM | egrep "^y|^Y|^yes|^YES") ]] && echo "Initiating the Shutdown..." && wall -n "Server Going to to halt now under Reference Ticket $REFTICKT " && shutdown -h now
+case $CNFM in
+y|Y) echo "Initiating the Shutdown..." && wall -n "Server Going to to halt now under Reference Ticket $REFTICKT " && shutdown -h now ;;
+n|N) printf "\r Returning back to main menu"; sleep 3; MAIN_MENU ;;
+*) printf "\rInvalid Input"; sleep 2; MAIN_MENU ;;
+esac
+
 }
 SVR_REBOOT()
 {
 sleep 2
-printf "\n Do you Want to Proceed to reboot the server y|Y or n|N: "
+printf "\n Do you Want to Proceed to reboot the server Y/N : "
 read CNFM
 case $CNFM in
 y|Y) shutdown -r now ;;
@@ -71,7 +76,7 @@ printf "\e$YELLOW	X.Exit\n"
 printf "\e$NOCOLOR\n"
 printf "\e$MAGENTA Enter the Option: "
 read MENU_SELECTION
-printf "\n$NOCOLOR Selected menu is $MENU_SELECTION\n"
+printf "\n$NOCOLOR"
 sleep 2
 case $MENU_SELECTION in
 1) MENU1 ;;
