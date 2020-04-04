@@ -32,15 +32,23 @@ echo "Performing Menu 3 tasks"
 }
 SVR_SHUTDOWN()
 {
-echo "Shutting Down the server........"
-#Shutdown related commands here
-#
+sleep 2
+printf "\n Enter the Reference Ticket : "
+read REFTICKT
+printf "\n Do you Want to Proceed to Shutdown the server y|Y or n|N: "
+read CNFM
+[[ -n $(echo $CNFM | egrep "^y|^Y|^yes|^YES") ]] && echo "Initiating the Shutdown..." && wall -n "Server Going to to halt now under Reference Ticket $REFTICKT " && shutdown -h now
 }
 SVR_REBOOT()
 {
-echo "prforming Server Reboot"
-#Reboot related commands here
-#
+sleep 2
+printf "\n Do you Want to Proceed to reboot the server y|Y or n|N: "
+read CNFM
+case $CNFM in
+y|Y) shutdown -r now ;;
+n|N) printf "\r Returning back to main menu"; sleep 3; MAIN_MENU ;;
+*) printf "\rInvalid Input"; sleep 2; MAIN_MENU ;;
+esac
 }
 
 #main menu starting from here
