@@ -1,0 +1,24 @@
+#!/bin/bash
+#Script to show rotating cursur for the time being 
+#Time should be mentioned as a arguement
+#syntax			./rotate.sh time(Seconds)
+MAGENTA="\e[35m"
+BOLD="\e[1m"
+NOCOLOR="\e[39m"
+tme=$1
+spin='\|/-\'
+
+printf "$BOLD $MAGENTA"
+for (( start = $1; start > 0; start-- )) 
+	do
+	{
+			for i in {1..4}
+				do
+					sleep 0.5 &
+					printf "\r ${spin:$i:1} ${spin:$i:1} ${spin:$i:1}" & sleep 0.5
+				done
+		#printf " $start \r"
+		let "tme=tme-1"
+	}
+	done
+printf "\r$NOCOLOR"
