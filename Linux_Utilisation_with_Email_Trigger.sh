@@ -25,7 +25,7 @@ then
 printf "${RED}CRITICAL ${NOCOLOR} CPU Usage : ${SAR_CPU}%% Idle ${DATE}\n" >> /opt/cpu.out
 tail -n5 /opt/cpu.out > /tmp/cpuusage.tmp
 echo Sending Email....
-#mail -s "CPU Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/cpusage.tmp
+mail -s "CPU Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/cpusage.tmp
 
 
 elif [ $SAR_CPU -ge 10 ] && [ $SAR_CPU -le 20 ]
@@ -33,7 +33,7 @@ then
 printf "${YELLOW}WARNING ${NOCOLOR} CPU Usage : ${SAR_CPU}%% Idle ${DATE}\n" >> /opt/cpu.out
 tail -n5 /opt/cpu.out > /tmp/cpuusage.tmp
 echo Sending Email....
-#mail -s "CPU Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/cpusage.tmp
+mail -s "CPU Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/cpusage.tmp
 
 else
 printf "${GREEN}OK ${NOCOLOR} CPU Usage : ${SAR_CPU}%% Idle ${DATE}\n" >> /opt/cpu.out
@@ -45,15 +45,14 @@ then
 printf "${RED}CRITICAL ${NOCOLOR} Mem Usage : ${SAR_MEM}%% Used ${DATE}\n" >> /opt/mem.out
 tail -n5 /opt/mem.out > /tmp/memusage.tmp
 echo Sending Email....
-#mail -s "Mem Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/memusage.tmp
+mail -s "Mem Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/memusage.tmp
 
 elif [ $SAR_MEM -ge 80 ] && [ $SAR_MEM -le 90 ]
 then
 printf "${YELLOW}WARNING ${NOCOLOR} Mem Usage : ${SAR_CPU}%% Used ${DATE}\n" >> /opt/mem.out
 tail -n5 /opt/mem.out > /tmp/memusage.tmp
 echo Sending Email....
-#mail -s "Mem Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/memusage.tmp
+mail -s "Mem Utilization of ${SERVER_HOSTNAME}" "$ADMIN_EMAIL_ID" < /tmp/memusage.tmp
 else
 printf "${GREEN}OK ${NOCOLOR} Mem Usage : ${SAR_MEM}%% Used ${DATE}\n" >> /opt/mem.out
 fi
-printf "done!!!\n"
