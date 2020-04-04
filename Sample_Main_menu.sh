@@ -1,4 +1,11 @@
 #!/bin/sh
+## This script is used to create a menu based interaction in Shell script
+## Sample menu is created here
+## You can update the menu name accordingly
+##
+## DATE: 4th April 2020
+## Author: Nandhakumar Madheshwaran
+
 #COLOR DEFENITION
 NOCOLOR="\e[39m"
 RED="\e[31m"
