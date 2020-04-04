@@ -21,14 +21,17 @@ BASE=`pwd`
 MENU1()
 {
 echo "Performing Menu 1 tasks"
+#$BASE/Menu_1.sh
 }
 MENU2()
 {
 echo "Performing Menu 2 tasks"
+#$BASE/Menu_2.sh
 }
 MENU3()
 {
 echo "Performing Menu 3 tasks"
+#$BASE/Menu_3.sh
 }
 SVR_SHUTDOWN()
 {
