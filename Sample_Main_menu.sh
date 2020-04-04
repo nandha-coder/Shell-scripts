@@ -26,18 +26,14 @@ echo "Performing Menu 3 tasks"
 SVR_SHUTDOWN()
 {
 echo "Shutting Down the server........"
-
 #Shutdown related commands here
 #
-
 }
 SVR_REBOOT()
 {
 echo "prforming Server Reboot"
-
 #Reboot related commands here
 #
-
 }
 
 #main menu starting from here
@@ -47,7 +43,7 @@ MAIN_MENU()
 sleep 1
 printf "\e$GREEN#######################################\n"
 printf "\n"
-printf "\e$MAGENTA	Welcome to Sample Menu Script\n"
+printf "\e$MAGENTA  Welcome to Sample Menu Script\n"
 printf "\n"
 printf "\e$GREEN#######################################\n"
 printf "\e$YELLOW	1.Menu No 1\n"	##working fine
