@@ -64,14 +64,14 @@ esac
 MENU2_XYZ()
 {
 echo "Performing Menu 2 tasks"
-echo "This menu is not yet ready"
-MAIN_MENU
+echo "This menu is not yet ready..Exiting the program"
+exit
 }
 MENU3_PQR()
 {
 echo "Performing Menu 3 tasks"
-echo "This menu is not yet ready"
-MAIN_MENU
+echo "This menu is not yet ready.. Exiting the program"
+exit
 }
 
 
