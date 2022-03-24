@@ -64,20 +64,20 @@ MAIN_MENU()
 {
 /usr/bin/clear
 sleep 1
-printf "\e$GREEN#######################################\n"
+printf "$GREEN#######################################\n"
 printf "\n"
-printf "\e$MAGENTA  Welcome to Sample Menu Script\n"
+printf "$MAGENTA  Welcome to Sample Menu Script\n"
 printf "\n"
-printf "\e$GREEN#######################################\n"
-printf "\e$YELLOW	1.Menu No 1\n"	##working fine
-printf "\e$YELLOW	2.Menu No 2\n"
-printf "\e$YELLOW	3.Menu No 3\n"
-printf "\e$YELLOW	S.Shutdown Server\n"	##working fine
-printf "\e$YELLOW	R.Reboot Server\n"
+printf "$GREEN#######################################\n"
+printf "$YELLOW	1.Menu No 1\n"	##working fine
+printf "$YELLOW	2.Menu No 2\n"
+printf "$YELLOW	3.Menu No 3\n"
+printf "$YELLOW	S.Shutdown Server\n"	##working fine
+printf "$YELLOW	R.Reboot Server\n"
 printf "\n"
-printf "\e$YELLOW	X.Exit\n"
-printf "\e$NOCOLOR\n"
-printf "\e$MAGENTA Enter the Option: "
+printf "$YELLOW	X.Exit\n"
+printf "$NOCOLOR\n"
+printf "$MAGENTA Enter the Option: "
 read MENU_SELECTION
 printf "\n$NOCOLOR"
 sleep 2
